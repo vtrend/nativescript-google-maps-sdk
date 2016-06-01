@@ -24,6 +24,10 @@ export abstract class MapView extends View implements IMapView {
 
     public static mapReadyEvent: string = "mapReady";
     public static markerSelectEvent: string = "markerSelect";
+    
+    public static markerBeginDraggingEvent: string = "markerBeginDragging";
+    public static markerEndDraggingEvent: string = "markerEndDragging";
+    
     public static coordinateTappedEvent: string = "coordinateTapped";
     public static cameraChangedEvent: string = "cameraChanged";
 

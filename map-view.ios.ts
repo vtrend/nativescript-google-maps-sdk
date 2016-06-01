@@ -145,6 +145,15 @@ export class MapView extends MapViewCommon {
         this.notifyMarkerEvent(MapViewCommon.markerSelectEvent, marker);
     }
 
+
+    notifyMarkerEndDragging(marker: Marker) {
+        this.notifyMarkerEvent(MapViewCommon.markerEndDraggingEvent, marker);
+    }
+    notifyMarkerBeginDragging(marker: Marker) {
+        this.notifyMarkerEvent(MapViewCommon.markerBeginDraggingEvent, marker);
+    }
+
+
     addPolyline(shape: Polyline) {
         shape.loadPoints();
         shape.ios.map = this.gMap;
@@ -199,7 +208,7 @@ export class Position extends PositionBase {
     }
 
     get longitude() {
-        return this._ios.latitude;
+        return this._ios.longitude;
     }
 
     set longitude(longitude) {

@@ -124,6 +124,13 @@ export class MapView extends MapViewCommon {
     notifyMarkerTapped(marker: Marker) {
         this.notifyMarkerEvent(MapViewCommon.markerSelectEvent, marker);
     }
+    
+    notifyMarkerEndDragging(marker: Marker) {
+        this.notifyMarkerEvent(MapViewCommon.markerEndDraggingEvent, marker);
+    }
+    notifyMarkerBeginDragging(marker: Marker) {
+        this.notifyMarkerEvent(MapViewCommon.markerBeginDraggingEvent, marker);
+    }
 
     addPolyline(shape: Polyline) {
         shape.loadPoints();
@@ -283,7 +290,7 @@ export class Position extends PositionBase {
     }
 
     get longitude() {
-        return this._android.latitude;
+        return this._android.longitude;
     }
 
     set longitude(longitude) {
